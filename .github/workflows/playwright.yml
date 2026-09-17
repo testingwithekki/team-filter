@@ -12,4 +12,4 @@ jobs:
   playwright:
     uses: testingwithekki/ci-platform/.github/workflows/playwright.yml@main
     with:
-      team: search
+      team: filter

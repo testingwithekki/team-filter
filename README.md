@@ -1,6 +1,6 @@
-# Search team sample
+# Filter team sample
 
-Three small, deterministic Playwright tests provide a second workload for the shared CI runner. The tests use in-memory pages so a separate demo application and external website do not affect CI results.
+Three small Playwright tests cover filtering tasks in [Playwright's TodoMVC demo](https://demo.playwright.dev/todomvc/). They provide a second workload for the shared CI runner.
 
 This is a **public** repository under `testingwithekki`. Its workflow calls the shared workflow in [`ci-platform`](https://github.com/testingwithekki/ci-platform), which targets the organization's `qa-playwright` runner. Self-hosted jobs run only on trusted `main` pushes or manual dispatch; the workflow has no pull-request trigger.
 
