@@ -16,16 +16,16 @@ test.beforeEach(async ({ page }) => {
 
 test('shows only active todos', async ({ page }) => {
   await page.getByRole('link', { name: 'Active' }).click();
-  await expect(page.locator('.todo-list li')).toHaveText('Open task');
+  await expect(page.locator('.todo-list li:visible')).toHaveText('Open task');
 });
 
 test('shows only completed todos', async ({ page }) => {
   await page.getByRole('link', { name: 'Completed' }).click();
-  await expect(page.locator('.todo-list li')).toHaveText('Finished task');
+  await expect(page.locator('.todo-list li:visible')).toHaveText('Finished task');
 });
 
 test('clears completed todos', async ({ page }) => {
   await page.getByRole('button', { name: 'Clear completed' }).click();
-  await expect(page.locator('.todo-list li')).toHaveText('Open task');
+  await expect(page.locator('.todo-list li:visible')).toHaveText('Open task');
   await expect(page.locator('.todo-count')).toContainText('1 item left');
 });
